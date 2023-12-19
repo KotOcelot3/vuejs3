@@ -6,12 +6,14 @@ Vue.component('cards-kanban', {
         <fill></fill>
         <div id="columns">
             <column1 :column1="column1"></column1>
+            <column2 :column2="column2"></column2>
         </div>
     </div>
     `,
     data() {
         return {
             column1:[],
+            column2:[],
             showCard: true,
         }
     },
@@ -19,6 +21,10 @@ Vue.component('cards-kanban', {
 
         eventBus.$on('card-create', card => {
             this.column1.push(card)
+        })
+        eventBus.$on('moving1', card => {
+            this.column2.push(card)
+            this.column1.splice(this.column1.indexOf(card), 1)
         })
     }
 })
