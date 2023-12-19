@@ -35,6 +35,11 @@ Vue.component('cards-kanban', {
             localStorage.setItem("column2", JSON.stringify(this.column2))
             localStorage.setItem("column3", JSON.stringify(this.column3))
         })
+        eventBus.$on('moving3-2', card => {
+            this.column2.push(card)
+            this.column3.splice(this.column3.indexOf(card), 1)
+            card.dateE = new Date().toLocaleDateString()
+        })
     }
 })
 
