@@ -25,7 +25,9 @@ Vue.component('cards-kanban', {
         if ((JSON.parse(localStorage.getItem("column1")) != null)){
             this.column1 = JSON.parse(localStorage.getItem("column1"))
         }
-
+        if ((JSON.parse(localStorage.getItem("column2")) != null)){
+            this.column2 = JSON.parse(localStorage.getItem("column2"))
+        }
 
         eventBus.$on('card-create', card => {
             this.column1.push(card)
@@ -167,15 +169,19 @@ Vue.component('column1', {  //создание, удаление, редакти
     `,
     methods: {
         deleteCard(card){
+            JSON.parse(localStorage.getItem("column1"))
             this.column1.splice(this.column1.indexOf(card), 1)
+            localStorage.setItem("column1", JSON.stringify(this.column1))
         },
         updateC(card){
             card.updateCard = true
         },
         updateTask(card){
+            JSON.parse(localStorage.getItem("column1"))
             this.column1.push(card)
             this.column1.splice(this.column1.indexOf(card), 1)
             card.dateL = new Date().toLocaleString()
+            localStorage.setItem("column1", JSON.stringify(this.column1))
             return card.updateCard = false
         },
         moving(card){
@@ -230,9 +236,11 @@ Vue.component('column2', {  //редактирование, время посл�
             console.log(card.updateCard)
         },
         updateTask(card){
+            JSON.parse(localStorage.getItem("column2"))
             this.column2.push(card)
             this.column2.splice(this.column2.indexOf(card), 1)
             card.dateL = new Date().toLocaleString()
+            localStorage.setItem("column2", JSON.stringify(this.column2))
             return card.updateCard = false
         },
         moving(card){
