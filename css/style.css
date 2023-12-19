@@ -1,0 +1,145 @@
+*{
+    font-weight: 500;
+}
+
+
+textarea{
+    resize: none;
+    border: none;
+    padding: 8px 41px;
+    border-radius: 12px;
+    border: #6b705c solid 2px;
+}
+
+body{
+    background-color:#b7b7a4;
+    font-family: FreeMono, monospace;
+}
+.card{
+    margin-bottom: 30px;
+    margin-top: 25px;
+    background-color: #a5a58d ;
+    border: #48523D solid 2px;
+    border-radius: 12px;
+    padding: 18px;
+
+}
+#columns{
+    display: flex;
+}
+.column{
+    width: 25%;
+    text-align: center;
+    padding: 0 20px;
+    color: black;
+    border: 3px solid #48523D;
+}
+.change{
+    border-top: cadetblue 2px dotted;
+    margin-top: 20px;
+}
+ul{
+    padding: 0;
+    margin-bottom: 0px;
+}
+li{
+    list-style-type: none;
+    margin: 10px;
+}
+button{
+    padding: 9px 20px;
+    border-radius: 7px;
+    border: none;
+    background-color: #6b705c;
+    margin-top: 15px;
+    margin-bottom: 10px;
+    color: #ffe8d6;
+}
+button:hover{
+    background-color: #ddbea9;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #6b705c;
+}
+#inTime{
+    color: darkolivegreen;
+    text-decoration: underline;
+}
+#notInTime {
+    color: firebrick;
+    text-decoration: underline;
+}
+.title{
+    margin-bottom: 25px;
+}
+#form {
+    margin: 50px 0;
+    display: block;
+    text-align: center;
+    margin-bottom: 70px;
+}
+.button{
+    padding: 9px 20px;
+    border-radius: 7px;
+    border: none;
+    background-color: #6b705c;
+    margin-top: 15px;
+    margin-bottom: -40px;
+    color: #ffe8d6;
+}
+.button:hover{
+    background-color: #cb997e;
+    cursor: pointer;
+    transition: 0.5s;
+    color: #6b705c ;
+}
+
+input{
+    border: none;
+    border: #6b705c solid 2px;
+    width: 200px;
+    padding: 10px 12px;
+    border-radius: 12px;
+}
+
+.pForm{
+    margin-top: 35px;
+}
+
+/*модальное окно*/
+.modal-shadow {
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.39);
+    margin-top: -70px;
+}
+
+.modal {
+    background: #ffe8d6;
+    border-radius: 8px;
+    padding: 15px;
+    min-width: 420px;
+    max-width: 480px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.modal-close{
+    border-radius: 32%;
+    color: #ffe8d6;
+    background: #6b705c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 7px;
+    right: 7px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
