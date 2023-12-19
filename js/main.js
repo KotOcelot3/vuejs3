@@ -31,6 +31,9 @@ Vue.component('cards-kanban', {
         if ((JSON.parse(localStorage.getItem("column3")) != null)){
             this.column3 = JSON.parse(localStorage.getItem("column3"))
         }
+        if ((JSON.parse(localStorage.getItem("column4")) != null)){
+            this.column4 = JSON.parse(localStorage.getItem("column4"))
+        }
 
         eventBus.$on('card-create', card => {
             this.column1.push(card)
