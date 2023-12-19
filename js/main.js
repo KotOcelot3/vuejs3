@@ -7,6 +7,7 @@ Vue.component('cards-kanban', {
         <div id="columns">
             <column1 :column1="column1"></column1>
             <column2 :column2="column2"></column2>
+            <column3 :column3="column3"></column3>
         </div>
     </div>
     `,
@@ -14,6 +15,7 @@ Vue.component('cards-kanban', {
         return {
             column1:[],
             column2:[],
+            column3:[],
             showCard: true,
         }
     },
@@ -25,6 +27,13 @@ Vue.component('cards-kanban', {
         eventBus.$on('moving1', card => {
             this.column2.push(card)
             this.column1.splice(this.column1.indexOf(card), 1)
+        })
+         eventBus.$on('moving2', card => {
+            JSON.parse(localStorage.getItem("column2"))
+            this.column3.push(card)
+            this.column2.splice(this.column2.indexOf(card), 1)
+            localStorage.setItem("column2", JSON.stringify(this.column2))
+            localStorage.setItem("column3", JSON.stringify(this.column3))
         })
     }
 })
