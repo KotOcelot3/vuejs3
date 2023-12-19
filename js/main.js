@@ -8,6 +8,7 @@ Vue.component('cards-kanban', {
             <column1 :column1="column1"></column1>
             <column2 :column2="column2"></column2>
             <column3 :column3="column3"></column3>
+            <column4 :column4="column4"></column4>
         </div>
     </div>
     `,
@@ -16,6 +17,7 @@ Vue.component('cards-kanban', {
             column1:[],
             column2:[],
             column3:[],
+            column4:[],
             showCard: true,
         }
     },
