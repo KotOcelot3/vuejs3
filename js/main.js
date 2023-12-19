@@ -60,6 +60,7 @@ Vue.component('cards-kanban', {
             localStorage.setItem("column3", JSON.stringify(this.column3))
         })
          eventBus.$on('moving3-4', card => {
+            JSON.parse(localStorage.getItem("column3"))
             this.column4.push(card)
             this.column3.splice(this.column3.indexOf(card), 1)
             card.dateE = new Date().toLocaleDateString()
@@ -67,6 +68,8 @@ Vue.component('cards-kanban', {
             if (card.dateE > card.dateD){
                 card.inTime = false
             }
+            localStorage.setItem("column3", JSON.stringify(this.column3))
+            localStorage.setItem("column4", JSON.stringify(this.column4))
         })
     }
 })
