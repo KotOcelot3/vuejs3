@@ -129,6 +129,7 @@ Vue.component('fill', {    //дата создания, заголовок, оп
             this.dateD = null
             this.closeModal()
             console.log(card)
+            card.dateD = card.dateD.split('-').reverse().join('.'),
         },
         closeModal(){
             this.show = false
